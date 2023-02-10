@@ -1,37 +1,37 @@
 import React, { useState } from "react";
 
 const Form = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-    const handleSubmit = e => {
-        e.preventDefault();
-        const data = {
-          username, password
-        };
-        const json = JSON.stringify(data, null, 4);
-        console.clear();
-      	console.log(json);
-  	};
+  const handleSubmit = e => {
+    e.preventDefault();
+    const data = { username, password };
+    const json = JSON.stringify(data, null, 4);  // JSON.stringify(value, replacer, space)
+    console.clear();
+    console.log(json);
+  };
 
-    return (
-        <div>
+  return (
+    <div className="form-control mt-5" >
       <form onSubmit={handleSubmit}>
         <h2>Simple Form</h2>
-        <div>
-          <label>Username: </label>
-          <input type="text" value={username}
+        <div className="mb-3">
+          <label>Username:</label>
+          <input type="text" className="form-control" 
+            value={username}
             onChange={e => setUsername(e.target.value)} />
         </div>
-        <div>
-          <label>Password: </label>
-          <input type="password" value={password}
-            onChange={e => setPassword(e.target.value)} />
+        <div className="mb-3">
+          <label>Password:</label>
+          <input type="password" className="form-control" 
+            value={password}
+            onChange={e => setPassword(e.target.value)}/>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn btn-primary">Submit</button>
       </form>
-</div>
-    );
+    </div>
+  );
 };
 
 export default Form;
