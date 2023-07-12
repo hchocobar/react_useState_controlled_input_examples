@@ -13,8 +13,7 @@ const Form = () => {
   };
 
   return (
-    <div className="form-control mt-5" >
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form-control mt-5">
         <h2>Simple Form</h2>
         <div className="mb-3">
           <label>Username:</label>
@@ -30,7 +29,6 @@ const Form = () => {
         </div>
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
-    </div>
   );
 };
 
